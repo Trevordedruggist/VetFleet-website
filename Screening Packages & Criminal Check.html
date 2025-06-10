@@ -1,0 +1,114 @@
+<! DOCTYPE html>
+<html>
+<header>
+  <link rel="stylesheet" href="Style.css">
+<h2>DRIVER SCREENING PACKAGE</h2>
+<H3>ID & CRIMINAL CHECKS</H3>
+</header>
+<body>
+<p>We help you prevent fraud risk with instant South African ID validation for your business.
+    Our tool quickly checks ID number validity, revealing gender, age, and citizenship status—all processed directly on your device with zero data storage.</p>
+</body>
+</html>
+
+<html>
+    <head>
+        <title>VetFleet ID Verification</title>
+      </head>
+      <body>
+      <div class="verify-box1">
+        <h2>ID Verification</h2>
+        <input type="text" id="idNumber" placeholder="Enter your ID number">
+        <button onclick="verifyID()">Verify</button>
+        <p class="result" id="resultText"></p>
+      </div>
+      
+      <script>
+        function verifyID() {
+          const id = document.getElementById("idNumber").value;
+          const result = document.getElementById("resultText");
+      
+          // Example validation: check if it's a 13-digit South African ID
+          if (/^\d{13}$/.test(id)) {
+            result.textContent = "✅ ID number is valid.";
+            result.style.color = "green";
+          } else {
+            result.textContent = "❌ Please enter a valid 13-digit SA ID number.";
+            result.style.color = "red";
+          }
+        }
+      </script>
+      
+      </body>
+      </html>
+      <br/>
+<html>
+    <head>
+          <h3>DRIVER'S LICENSE AND RELATED VERIFICATION</h3>
+           <P>A simple driver’s license verification ensures that the license was legally obtained and for what code of vehicle it is issued. The candidates ID and Drivers Licence number is required to conduct this check.</P>
+            <meta charset="UTF-8">
+            <title>Driver's License Verification</title>
+    </head>
+    <body>
+          
+          <div class="verify-box2">
+            <h2>License Verification</h2>
+            
+            <input type="text" id="licenseInput" placeholder="Enter License Number">
+          
+            <input type="file" id="licenseFile" accept=".pdf,.jpg,.jpeg,.png">
+          
+            <button onclick="verifyLicense()">Verify</button>
+          
+            <div class="result" id="resultText"></div>
+          </div>
+          
+          <script>
+            function verifyLicense() {
+              const license = document.getElementById("licenseInput").value.trim();
+              const fileInput = document.getElementById("licenseFile");
+              const result = document.getElementById("resultText");
+          
+              const licensePattern = /^[A-Za-z0-9]{8,13}$/;
+          
+              // Validate license number format
+              if (!licensePattern.test(license)) {
+                result.textContent = "❌ Invalid license number. Must be 8–13 alphanumeric characters.";
+                result.style.color = "red";
+                return;
+              }
+          
+              // Validate file upload
+              const file = fileInput.files[0];
+              if (!file) {
+                result.textContent = "❌ Please upload a certified copy of the license.";
+                result.style.color = "red";
+                return;
+              }
+          
+              const allowedTypes = ["application/pdf", "image/jpeg", "image/png"];
+              if (!allowedTypes.includes(file.type)) {
+                result.textContent = "❌ Invalid file type. Only PDF, JPG, and PNG files are accepted.";
+                result.style.color = "red";
+                return;
+              }
+          
+              result.textContent = "✅ License number and file look good!";
+              result.style.color = "green";
+            }
+</script>
+</html>
+<br/>        
+<H3>EMPLOYMENT AND REFERENCE CHECKS</H3>
+<P>Hire a professional company to verify the details of the previous employer and to gather relevant information that will assist in making a more informed decision about the employment of the individual.
+Not only will the information provided in the CV or application be verified to be true but relevant questions will be asked to understand if the individual stands a chance of being re-hired at the previous employer that the actual earnings stated is correct, time keeping tendencies, etc.</P>
+
+
+<a href="SERVICES.html">Back</a> 
+
+</body>
+
+
+
+
+</html>
